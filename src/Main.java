@@ -1,22 +1,20 @@
 public class Main {
     public static void main(String[] args) {
         
-        // Instância o restaurante já criando o objeto e passando os parâmetros (nome, endereco, categoria)
-        // Usando o metódo construtor (Restaurante)
-        Restaurante burgerLab = new Restaurante("BURGUERLAB", "Rua dos bobos, nº 7", "Hamburgueria, pizzaria, Pastéis");
-        Restaurante vodica = new Restaurante("Vó Dica", "Rua dos sem tetos, nº 508", "Pizzaria e Sorveteria");
-
-        //Instância os Clientes passando os parâmetros (nome, telefone)
-        // Usando o método construtor (Cliente)
-        Cliente marlonBrandon = new Cliente("Marlon Brandon", "35 9 9995-4446");
-        Cliente jeanCloud = new Cliente("Jean Cloud", "45 9 9996-7856");
+        // Usamos o polimorfismo salvando na variável Usuario 
+        // Instanciando Cliente e Entregador
+        Usuario c1 = new Cliente("Mais duro", "maisduro@gmail.com", "35 9 99255418");
+        Usuario c2 = new Cliente("Sherfloock", "sherfloock@outlook.com", "34 9 99566745");
         
-        // Instância o SistemaDelivery para conseguir criar o pedido
-        SistemaDelivery sistema = new SistemaDelivery();
-        sistema.criarPedido(jeanCloud, burgerLab, 475.75);
-        sistema.criarPedido(marlonBrandon, vodica, 1254.00);
+        // e1 representa o entregador
+        Usuario e1 = new Entregador("Robertin DuGrau", "robertin@dugrau.com", "10 09977654");
+        Usuario e2 = new Entregador("Paulin 244", "paulin@doiquatro.com", "24 454443321");
 
-        // System.out.print(" --- RELATÓRIO DE PEDIDOS --- \n");
-        System.out.println(sistema.getListarPedido());
+        // Atráves do elemento Pai estamos sobreescrevendo os dados
+        System.out.println(c1.getDados());
+        System.out.println(c2.getDados());
+        System.out.println(e1.getDados());
+        System.out.println(e2.getDados());
+        
     }
 }

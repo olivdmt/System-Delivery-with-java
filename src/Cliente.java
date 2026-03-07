@@ -1,34 +1,21 @@
-public class Cliente {
-    // Atributos para representar o consumidor
-    private String nome;
-    private String telefone;
-
-    // Método construtor para garantir que os objetos nasçam válidos.
-    public Cliente(String nome, String telefone) {
-
-        // Verifica se o nome do Cliente está vazio.
-        if (nome == null || nome.isBlank()) throw new IllegalArgumentException("Cliente não pode ser nulo!");
-
-        // Se estiver preenchido então atribui aos objetos.
-        this.nome = nome;
-        this.telefone = telefone;
+public class Cliente extends Usuario {
+    // Usamos o construtor para criar o objeto no elemento pai definido
+    public Cliente(String nome, String email, String telefone) {
+        super(nome, email, telefone);
     }
 
-    // GETTERS, para retornar nome e telefone caso seja preciso vizualizar
-    public String getNome() {
-        return nome;
+    @Override
+    public String getDados() {
+        return """
+        ========== Cliente ==========
+
+        Nome     : %s
+        Email    : %s
+        Telefone : %s
+
+        ================================
+        """.formatted(nome, email, telefone);
     }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    // // GETTER para exibir as informações privadas
-    // public String getExibirInformacoesCliente() {
-    //     return """
-    //             Nome: %s
-    //             Telefone: %s
-    //             """.formatted(nome, telefone);
-    // }
-
+    
+    
 }

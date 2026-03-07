@@ -42,7 +42,7 @@ public class Pedido {
                 ---------------------------------
                 TOTAL: R$ %.2f
                 =================================
-                """.formatted(id, cliente.getNome(), cliente.getTelefone() ,restaurante.getNome(), valorTotal);
+                """.formatted(id, cliente.getDados(), cliente.getDados() ,restaurante.getNome(), valorTotal);
     }
 }
 
