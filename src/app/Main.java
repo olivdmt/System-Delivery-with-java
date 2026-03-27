@@ -7,30 +7,24 @@ import model.Restaurante;
 import service.EntregaBicicleta;
 import service.Entregavel;
 import service.EntregaMoto;
-
 import java.util.Random;
 
 
 public class Main {
     public static void main(String[] args) {
-        // Váriavel do tipo interface
-        Entregavel entregaSelecionada;
-        // Instância do metodo Random
-        Random random = new Random();
+        // Criamos as opções disponíveis
+        Entregavel[] opcoes = { new EntregaBicicleta(), new EntregaMoto()};
+        // Fazemos um sorteio (0, 1)
+        int sorteio = new Random().nextInt(opcoes.length);
+        Entregavel entregaSelecionada = opcoes[sorteio];
 
         // Instância dos clientes
         Cliente c1 = new Cliente("Jeremias", "jere@hotmail.com", "35 9 99488767");
+
         // Instância dos restaurantes
         Restaurante UaiGrill = new Restaurante("UaiGrill", "Rua concórdia 280", "Pizzaria");
         // Instância dos pedidos
         Pedido p1 = new Pedido(c1, UaiGrill, 234.90);
-
-        // Criamos uma aleatoridade gerando 0 ou 1, para designar uma função para os entregadores
-        if (random.nextInt(2) == 0) {
-            entregaSelecionada = new EntregaMoto();
-        } else {
-            entregaSelecionada = new EntregaBicicleta();
-        }
 
         p1.setEstrategiaEntrega(entregaSelecionada);
 

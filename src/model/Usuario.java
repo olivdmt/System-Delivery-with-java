@@ -1,7 +1,7 @@
 package model;
 
 // Usuário genérico para representar qualquer pessoa no sistema
-abstract class Usuario {
+public abstract class Usuario {
     protected String nome;
     protected String email;
     protected String telefone;
