@@ -1,9 +1,14 @@
+package model;
 // Esta classe representa a ligação entre um cliente e um restaurante específico
+
+import service.Entregavel;
+
 public class Pedido {
     // Criamos os atributos (referencias)
     private Cliente cliente;
     private Restaurante restaurante;
     private Double valorTotal;
+    private Entregavel estrategiaEntrega;
     //Atributo estático para gera um contador global
     private static int idCount = 0;
     // Toda vez que um pedido for gerado, a contagem de ID irá gera um novo número 
@@ -28,6 +33,16 @@ public class Pedido {
 
     }
 
+    public void setEstrategiaEntrega(Entregavel estrategia) {
+        this.estrategiaEntrega = estrategia;
+    }
+
+    public void finalizarPedido() {
+        if (estrategiaEntrega != null) {
+            estrategiaEntrega.realizarEntrega();
+        }
+    }
+
     // Metodo GETTERS para exibiri as informações do pedido
     public String getExibirInformacao() {
         return """
@@ -42,7 +57,7 @@ public class Pedido {
                 ---------------------------------
                 TOTAL: R$ %.2f
                 =================================
-                """.formatted(id, cliente.getDados(), cliente.getDados() ,restaurante.getNome(), valorTotal);
+                """.formatted(id,cliente.getNome(), cliente.telefone ,restaurante.getNome(), valorTotal);
     }
 }
 

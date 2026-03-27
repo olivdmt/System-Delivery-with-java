@@ -1,10 +1,12 @@
+package model;
+
 // Usuário genérico para representar qualquer pessoa no sistema
-public class Usuario {
+abstract class Usuario {
     protected String nome;
     protected String email;
     protected String telefone;
 
-    // Metodo construtor para instancia um objeto passando valores
+    // Construtor usado para a instância um objeto passando valores
     public Usuario(String nome, String email, String telefone) {
         this.nome = nome;
         this.email = email;
@@ -13,13 +15,16 @@ public class Usuario {
     // Metodo para obter os dados deste Usuário
     public String getDados() {
         return """
-                ========== Entregador ==========
+                ========== %s ==========
 
                 Nome     : %s
                 Email    : %s
                 Telefone : %s
 
                 ================================
-                """.formatted(nome, email, telefone);
+                """.formatted( this.getClass(), nome, email, telefone);
     }
+
+    public String getNome() { return nome; }
+    public String getEmail() { return email; }
 }

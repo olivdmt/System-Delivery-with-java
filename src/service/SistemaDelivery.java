@@ -1,4 +1,10 @@
+package service;
+
 import java.util.ArrayList;
+
+import model.Cliente;
+import model.Pedido;
+import model.Restaurante;
 
 public class SistemaDelivery {
     //Cria o atributo para armazenar os pedidos

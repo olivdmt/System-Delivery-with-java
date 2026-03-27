@@ -1,3 +1,4 @@
+package model;
 //Classe Restaurante
 public class Restaurante {
     // Atributos de isntancia privado

@@ -1,3 +1,5 @@
+package model;
+
 public class Cliente extends Usuario {
     // Usamos o construtor para criar o objeto no elemento pai definido
     public Cliente(String nome, String email, String telefone) {
