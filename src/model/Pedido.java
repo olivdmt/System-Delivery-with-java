@@ -8,8 +8,8 @@ public class Pedido {
     private Cliente cliente;
     private Restaurante restaurante;
     private Double valorTotal;
-    private Entregavel estrategiaEntrega;
-    //Atributo estático para gera um contador global
+    private Entregavel estrategiaEntrega; // Referência para a interface
+    //Atributo estático para criar um contador global
     private static int idCount = 0;
     // Toda vez que um pedido for gerado, a contagem de ID irá gera um novo número 
     private final int id;
@@ -33,6 +33,7 @@ public class Pedido {
 
     }
 
+    // Metodo para associar o parametro recebido a variável
     public void setEstrategiaEntrega(Entregavel estrategia) {
         this.estrategiaEntrega = estrategia;
     }
