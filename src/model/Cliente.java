@@ -16,7 +16,7 @@ public class Cliente extends Usuario {
         Telefone : %s
 
         ================================
-        """.formatted(nome, email, telefone);
+        """.formatted(getNome(), getEmail(), getTelefone());
     }
     
     

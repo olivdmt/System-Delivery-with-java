@@ -2,9 +2,9 @@ package model;
 
 // Usuário genérico para representar qualquer pessoa no sistema
 public abstract class Usuario {
-    protected String nome;
-    protected String email;
-    protected String telefone;
+    private String nome;
+    private String email;
+    private String telefone;
 
     // Construtor usado para a instância um objeto passando valores
     public Usuario(String nome, String email, String telefone) {
@@ -27,4 +27,5 @@ public abstract class Usuario {
 
     public String getNome() { return nome; }
     public String getEmail() { return email; }
+    public String getTelefone() { return telefone; }
 }
